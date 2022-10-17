@@ -1,0 +1,541 @@
+/* -------------------------------------------- */
+/* BASIC SETUP */
+/* -------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* -------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* -------------------------------------------- */
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 180%;
+  word-spacing: 2;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+h2::after {
+  content: "";
+  height: 2px;
+  background-color: #e67e22;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+.box {
+  padding: 1%;
+}
+
+.box p {
+  font-size: 80%;
+  line-height: 145%;
+}
+
+/* -----PARAGRAPH ------*/
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+}
+section {
+  padding: 80px 0;
+}
+/* --------ICONS -----------*/
+ion-icon {
+  --ionicon-stroke-width: 16px;
+}
+.icon-big {
+  font-size: 350%;
+  font-weight: 100;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+.icon-small {
+  color: #e67e22;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-size: 120%;
+
+  /* secrets to align text and icons */
+  vertical-align: middle;
+  line-height: 120%;
+  margin-top: -5px;
+  margin-right: 10px;
+}
+
+/* --------LINKS-----------*/
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #e67e22;
+  border-bottom: 1px solid #e67e22;
+  padding-bottom: 2px;
+  transition: border-bottom 0.5s, color 0.5s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
+}
+/* -------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------- */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/hero.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -------------------------------------------- */
+/* BUTTONS */
+/* -------------------------------------------- */
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 200px;
+  font-weight: 300;
+  transition: background-color 0.5s, border 0.5s, color 0.5s;
+}
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  color: #fff;
+  margin-right: 20px;
+}
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"].active {
+  background-color: #bf6516;
+}
+btn-full:hover,
+.btn-full:active {
+  border: 1px solid #bf6516;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 1px solid #bf6516;
+  color: #fff;
+}
+
+/* -------------------------------------------- */
+/* Nav */
+/* -------------------------------------------- */
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+
+  transition: border-bottom 0.3s ease-in-out;
+}
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid #e67e22;
+}
+/* -------------------------------------------- */
+/* FEATURES */
+/* -------------------------------------------- */
+.section-features .long-copy {
+  margin-bottom: 30px;
+}
+
+/* -------------------------------------------- */
+/* MEALS */
+/* -------------------------------------------- */
+.section-meals {
+  padding: 0;
+  margin-top: 300px;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+  display: flex;
+}
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.meal-photo img {
+  opacity: 0.6;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s, opacity 0.6s;
+}
+.meal-photo img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+/* -------------------------------------------- */
+/* SECTION STEPS */
+/* -------------------------------------------- */
+
+.section-steps {
+  background-color: #f4f4f4;
+  max-height: 100%;
+}
+
+.steps-box:first-child {
+  text-align: center;
+  padding-right: 3%;
+  margin-top: 30px;
+} 
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+.app-screen {
+  width: 40%;
+}
+.work-step {
+  margin-bottom: 50px;
+}
+.work-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.work-step div {
+  color: #e67e22;
+  border-radius: 50%;
+  border: 2px solid #e67e22;
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  font-size: 150%;
+  padding: 5px;
+  float: left;
+  margin-right: 40px;
+}
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* -------------------------------------------- */
+/* SECTION CITIES */
+/* -------------------------------------------- */
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.city-features {
+  margin-bottom: 5px;
+}
+
+.section-cities {
+  height: 100%;
+}
+/* -------------------------------------------- */
+/* SECTION TESTIMONIALS */
+/* -------------------------------------------- */
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(./img/back-customers.jpg);
+  background-size: cover;
+  height: 100%;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  position: relative;
+  margin-top: 50px;
+}
+blockquote::before {
+  content: "\201C";
+  font-size: 400%;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block;
+}
+cite img {
+  height: 45px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* -------------------------------------------- */
+/* SECTION PLANS */
+/* -------------------------------------------- */
+.section-plans {
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 60px;
+}
+/* .section-plans div .col {
+    margin: 0;
+} */
+.plan-box {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 2px 2px #fafafa;
+}
+.plan-box div {
+  padding: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.plan-box div:first-child {
+  background-color: #e6e6e6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.plan-box div:last-child {
+  text-align: center;
+  border-bottom: 1px solid transparent;
+}
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  color: #e67e22;
+  font-weight: 100;
+}
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+.plan-box ul {
+  list-style: none;
+}
+.plan-box ul li {
+  padding: 5px 0;
+}
+/* -------------------------------------------- */
+/* SECTION  FORM*/
+/* -------------------------------------------- */
+
+.section-form {
+  width: 60%;
+  margin: 0 auto;
+  height: 90%;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+textarea {
+  height: 100px;
+}
+
+input [type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+*:focus {
+  outline: none;
+}
+input::-webkit-input-placeholder {
+  font-weight: 300;
+}
+
+/* -------------------------------------------- */
+/* SECTION FOOTER*/
+/* -------------------------------------------- */
+footer {
+  background-color: #333;
+  padding: 20px;
+  font-size: 80%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: none;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.footer-nav li a:active,
+.footer-nav li a:hover {
+  color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 140%;
+}
+
+.fb,
+.tt,
+.gp,
+.ig {
+  transition: color 0.3s, background 0.3s ease-in-out, border-radius 0.3s;
+}
+
+.fb:hover,
+.fb:active {
+  color: #1877f2;
+  background: #fff;
+  border-radius: 50%;
+}
+.tt:hover,
+.tt:active {
+  color: #00aced;
+}
+.gp:hover,
+.gp:active {
+  color: #dd4b39;
+}
+.ig:hover,
+.ig:active {
+  color: #fff;
+  background: linear-gradient(45deg, yellow, red, purple 60%);
+  border-radius: 10px;
+}
+
+footer p {
+  text-align: center;
+  color: #888;
+  margin-top: 40px;
+}
